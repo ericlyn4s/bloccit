@@ -1,5 +1,7 @@
 {
   "name": "blocit",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "check-node-version": "^2.1.0"
+  }
 }
