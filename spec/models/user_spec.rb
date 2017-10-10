@@ -21,6 +21,13 @@ RSpec.describe User, type: :model do
      it "should have name and email attributes" do
        expect(user).to have_attributes(name: "Bloccit User", email: "user@bloccit.com")
      end
+
+     #Capitalize name
+     it "should format name to capitalize first and last" do
+       user.name = "bloc user"
+       user.save
+       expect(user.name).to eq "Bloc User"
+     end
    end
 
    describe "invalid user" do
@@ -36,4 +43,6 @@ RSpec.describe User, type: :model do
      end
 
    end
+
+
 end
