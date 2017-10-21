@@ -21,9 +21,19 @@
    </div>
  </div>
 
- 
+<% if userPosts(@user) %>
  <h2>Posts</h2>
  <%= render @user.posts %>
 
  <h2>Comments</h2>
  <%= render @user.comments %>
+<% else %>
+ <%= @user.name %> has not submitted any posts yet.
+<% end %>
+
+  <% @user.favorites.each {|fave| %>
+  <%= fave.user.avatar_url %>
+  <%= fave.post.title %>
+  <%= fave.post.votes %>
+  <%= fave.post.comments %>
+  <% } %>
