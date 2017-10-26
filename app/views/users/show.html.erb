@@ -34,6 +34,6 @@
   <% @user.favorites.each {|fave| %>
   <%= fave.user.avatar_url %>
   <%= fave.post.title %>
-  <%= fave.post.votes %>
-  <%= fave.post.comments %>
+  <%= fave.post.votes.count %>
+  <%= fave.post.comments.count %>
   <% } %>
